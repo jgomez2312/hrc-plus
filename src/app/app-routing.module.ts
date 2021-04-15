@@ -1,32 +1,22 @@
+// Modulos generales.
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { NotpagefoundComponent } from './pages/notpagefound/notpagefound.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { ProgessComponent } from './pages/progess/progess.component';
-import { Grafica1Component } from './pages/grafica1/grafica1.component';
-import { PagesComponent } from './pages/pages.component';
+
+// Modulos personalizados.
+import { PagesRoutingModule } from './pages/pages-routing.module';
+import { AuthRoutingModule } from './auth/auth-routing.module';
+
+// Componentes personalizados.
+import { NotpagefoundComponent } from './notpagefound/notpagefound.component';
 
 const routes: Routes = [
-  { 
-    path: '', 
-    component: PagesComponent,
-    children: [
-      { path: 'dashboard', component:DashboardComponent},
-      { path: 'progress', component: ProgessComponent},
-      { path: 'grafica1', component: Grafica1Component},
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-    ]
-  },
-  { path: 'dashboard', component:DashboardComponent},
-  { path: 'progress', component: ProgessComponent},
-  { path: 'grafica1', component: Grafica1Component},
 
-  { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent},
+  // Informacion general
+  // path: '/dashboard' PagesRoutingModule
+  // path: '/auth' AuthRoutingModule
 
-  
+  // Rutas generales
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   { path: '**', component: NotpagefoundComponent},
 
 ]
@@ -34,7 +24,9 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forRoot( routes )
+    RouterModule.forRoot( routes ),
+    PagesRoutingModule,
+    AuthRoutingModule
   ],
   exports: [ RouterModule ]
 })
