@@ -13,6 +13,8 @@ import { AppComponent } from './app.component';
 // Componentes personalizados.
 import { NotpagefoundComponent } from './notpagefound/notpagefound.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

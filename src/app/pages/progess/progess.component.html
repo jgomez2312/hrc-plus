@@ -1,1 +1,53 @@
-<p>progess works!</p>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox ">
+            <div class="ibox-title">
+                <h5>Active Progressbars 1 </h5>
+            </div>
+
+            <div class="ibox-content">
+                <div class="progress">
+                    <div class="
+                        progress-bar
+                        progress-bar-striped
+                        progress-bar-animated
+                        progress-bar-primary" [style.width]="getProgreso1" role="p100rogressbar">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ibox ">
+            <div class="ibox-title">
+                <h5>Active Progressbars 2 </h5>
+            </div>
+
+            <div class="ibox-content">
+                <div class="progress">
+                    <div class="
+                        progress-bar
+                        progress-bar-striped
+                        progress-bar-animated
+                        progress-bar-info" [style.width]="getProgreso2" role="p100rogressbar">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <div class="ibox ">
+            <div class="ibox-content">
+                <app-incrementador (valor)="progreso1 = $event" [valor]="progreso1"></app-incrementador>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="ibox ">
+            <div class="ibox-content">
+                <app-incrementador (valor)="progreso2 = $event" [valor]="progreso2" [btnClass]="'btn btn-info'"></app-incrementador>
+            </div>
+        </div>
+    </div>
+</div>
