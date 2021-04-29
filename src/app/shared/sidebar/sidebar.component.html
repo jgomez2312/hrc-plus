@@ -14,21 +14,19 @@
                             <li><a class="dropdown-item" href="contacts.html">Contacts</a></li>
                             <li><a class="dropdown-item" href="mailbox.html">Mailbox</a></li>
                             <li class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                            <li><a class="dropdown-item" routerLink="/login">Logout</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">
                         HRC+
                     </div>
                 </li>
-                <li>
-                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+                <li *ngFor="let item of menuItens">
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">{{ item.titulo }}</span> <span class="label label-primary float-right">{{ item.menu.length }}</span></a>
                     <ul class="nav nav-second-level collapse animated fadeIn">
-                        <li><a href="index.html">Dashboard v.1</a></li>
-                        <li><a href="dashboard_2.html">Dashboard v.2</a></li>
-                        <li><a href="dashboard_3.html">Dashboard v.3</a></li>
-                        <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
-                        <li><a href="dashboard_5.html">Dashboard v.5 </a></li>
+                        <li *ngFor="let subItem of item.menu">
+                            <a [routerLink]="subItem.url">{{ subItem.titulo }}</a>
+                        </li>
                     </ul>
                 </li>
             </ul>

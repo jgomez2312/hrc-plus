@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { year } from 'src/app/app.component';
 
 @Component({
@@ -11,9 +12,13 @@ export class LoginComponent implements OnInit {
 
   year = year
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  login() {
+    this.router.navigateByUrl('/');
   }
 
 }
